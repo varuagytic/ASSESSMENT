@@ -1,0 +1,23 @@
+@model List<UserManagement.Models.User>
+
+    <h2>Active Users</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Active</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Forename @user.Surname</td>
+                    <td>@user.Email</td>
+                    <td>@user.IsActive.ToString().ToLower()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
